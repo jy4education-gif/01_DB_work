@@ -9,7 +9,7 @@
 SHOW DATABASES;
 
 /* DB boo löschen, falls vorhanden*/
--- DROP DATABASE IF EXISTS boo; 
+DROP DATABASE IF EXISTS boo; 
 
 /* DB boo anlegen, falls noch nicht vorhanden*/
 CREATE DATABASE IF NOT EXISTS boo;
@@ -33,10 +33,11 @@ CREATE TABLE IF NOT EXISTS test (
 SHOW TABLES;
 
 /* Struktur der Tabelle anzeigen */
-DESCRIBE beispiel; 
+-- DESCRIBE beispiel; 
 -- Alternativ: 
 -- SHOW COLUMNS FROM beispiel;
 -- SHOW COLUMNS FROM test;
+DESCRIBE test;
 
 /* ----- Daten ------- */
 INSERT INTO test(name,age) VALUES("Max",35);
@@ -49,5 +50,5 @@ INSERT INTO test VALUES();
 -- INSERT INTO test (name) VALUES ('Test_01')
 
 /* ---- Inhalte der Tabelle anzeigen ---- */
-SELECT * FROM beispiel;
+-- SELECT * FROM beispiel;
 SELECT * FROM test;
