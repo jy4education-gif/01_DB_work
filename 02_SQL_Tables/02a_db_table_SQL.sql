@@ -1,3 +1,4 @@
+\! cls 
 /* ------  Strukturen ----- */
 
 /* Kommentar 1 */
