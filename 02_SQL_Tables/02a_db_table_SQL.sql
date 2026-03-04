@@ -39,13 +39,10 @@ SHOW TABLES;
 -- SHOW COLUMNS FROM test;
 DESCRIBE test;
 
-/* ----- Daten ------- */
+/* Datensatz einfügen */
 INSERT INTO test(name,age) VALUES("Max",35);
 INSERT INTO test(age,name) VALUES(29,"Maxine");
 INSERT INTO test VALUES();
-
-
-/* Datensatz einfügen */
 -- INSERT INTO beispiel (name) VALUES ('Mentor-Test');
 -- INSERT INTO test (name) VALUES ('Test_01')
 
