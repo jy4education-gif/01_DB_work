@@ -18,23 +18,24 @@ SHOW DATABASES;
 -- USE boo;
 
 /* Tabelle anlegen */
--- CREATE TABLE beispiel (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     name VARCHAR(100) NOT NULL,
---     erstellt_am TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE IF NOT EXISTS beispiel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    erstellt_am TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 /* Alle Tabellen in der DB anzeigen */
--- SHOW TABLES;
+SHOW TABLES;
 
 /* Struktur der Tabelle anzeigen */
 -- DESCRIBE beispiel; 
--- Alternativ: SHOW COLUMNS FROM beispiel;
+-- Alternativ: 
+SHOW COLUMNS FROM beispiel;
 
 /* ----- Daten ------- */
 
 /* Datensatz einfügen */
--- INSERT INTO beispiel (name) VALUES ('Mentor-Test');
+INSERT INTO beispiel (name) VALUES ('Mentor-Test');
 
 /* ---- Inhalte der Tabelle anzeigen ---- */
--- SELECT * FROM beispiel;
+SELECT * FROM beispiel;
