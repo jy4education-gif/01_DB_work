@@ -12,30 +12,42 @@ SHOW DATABASES;
 -- DROP DATABASE IF EXISTS boo; 
 
 /* DB boo anlegen, falls noch nicht vorhanden*/
--- CREATE DATABASE IF NOT EXISTS boo;
+CREATE DATABASE IF NOT EXISTS boo;
 
 /* DB auswählen */
--- USE boo;
+USE boo;
 
 /* Tabelle anlegen */
-CREATE TABLE IF NOT EXISTS beispiel (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    erstellt_am TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- CREATE TABLE IF NOT EXISTS beispiel (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL,
+--     erstellt_am TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+CREATE TABLE IF NOT EXISTS test (
+    name VARCHAR(20),
+    age INT,
+    erstellt_am TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
 /* Alle Tabellen in der DB anzeigen */
 SHOW TABLES;
 
 /* Struktur der Tabelle anzeigen */
--- DESCRIBE beispiel; 
+DESCRIBE beispiel; 
 -- Alternativ: 
-SHOW COLUMNS FROM beispiel;
+-- SHOW COLUMNS FROM beispiel;
+-- SHOW COLUMNS FROM test;
 
 /* ----- Daten ------- */
+INSERT INTO test(name,age) VALUES("Max",35);
+INSERT INTO test(age,name) VALUES(29,"Maxine");
+INSERT INTO test VALUES();
+
 
 /* Datensatz einfügen */
-INSERT INTO beispiel (name) VALUES ('Mentor-Test');
+-- INSERT INTO beispiel (name) VALUES ('Mentor-Test');
+-- INSERT INTO test (name) VALUES ('Test_01')
 
 /* ---- Inhalte der Tabelle anzeigen ---- */
 SELECT * FROM beispiel;
+SELECT * FROM test;
