@@ -1,8 +1,8 @@
 \! cls
-/* ------  Strukturen ----- */
+/* ------ Strukturen ----- */
 
-/* 	 
-	NULL wird nicht mehr zugelassen
+/* 
+    NULL wird nicht mehr zugelassen
     DEFAULT-Werte eintragen
 */
 
@@ -19,12 +19,11 @@ USE boo;
 DROP TABLE IF EXISTS test;
 
 /* Tab. test anlegen, falls noch nicht vorhanden*/
-CREATE TABLE IF NOT EXISTS test
-(
-    name VARCHAR(20),
-    age INT
+CREATE TABLE test (
+    name VARCHAR(50) NOT NULL DEFAULT '',
+    age INT NOT NULL DEFAULT 0,
+    id INT AUTO_INCREMENT PRIMARY KEY
 );
-
 
 /* Alle Tabellen in der DB anzeigen */
 SHOW TABLES;
@@ -33,12 +32,14 @@ SHOW TABLES;
 DESCRIBE test;
 
 /* ----- Daten ------- */
-INSERT INTO test(name,age) VALUES("Max",35);
-INSERT INTO test(age,name) VALUES(29,"Maxine");
-INSERT INTO test VALUES();
 
 -- ABER: Doppelte Datensätze werden zugelassen !
-
+INSERT INTO test (name, age) VALUES ('Max', 35);
+INSERT INTO test (name, age) VALUES ('Maxine', 29);
+INSERT INTO test (name, age) VALUES (NULL, NULL);
+INSERT INTO test (name, age) VALUES ('Max', 35);
+INSERT INTO test (name, age) VALUES ('Maxine', 29);
+INSERT INTO test (name, age) VALUES (NULL, NULL);
 
 /* ---- Inhalte der Tabelle anzeigen ---- */
 SELECT * FROM test;
