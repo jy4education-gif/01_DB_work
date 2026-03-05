@@ -1,17 +1,11 @@
-\! cls
-/* USER TAB. Version 2 */
+DROP DATABASE IF EXISTS boo.users;
+CREATE DATABASE boo.users;
+USE boo.users;
 
-/* Table users */
-DROP TABLE IF EXISTS boo.users;
-
-/* User Passwort mit varchar 40 erzeugen mit NOT NULL */
-
-/* Struktur */
-DESCRIBE boo.users;
-
-/* Daten */
-
-/* Inhalte : Ergebnistabelle */
-SELECT * FROM boo.users;
-
-
+CREATE TABLE boo.users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    pwd_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,27 @@
+{
+  "name": "01_db_work",
+  "version": "1.0.0",
+  "description": "03b_db_userDB_SQL Architektur:",
+  "homepage": "https://github.com/jy4education-gif/01_DB_work#readme",
+  "bugs": {
+    "url": "https://github.com/jy4education-gif/01_DB_work/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jy4education-gif/01_DB_work.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "argon2": "^0.44.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "expression": "^0.0.1",
+    "mysql2": "^3.18.2"
+  }
+}
