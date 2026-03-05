@@ -9,7 +9,8 @@
 SHOW DATABASES;
 
 /* DB boo löschen, falls vorhanden*/
-DROP DATABASE IF EXISTS boo; 
+DROP DATABASE IF EXISTS boo;
+-- DROP DATABEAS IF EXISTS beispiel; 
 
 /* DB boo anlegen, falls noch nicht vorhanden*/
 CREATE DATABASE IF NOT EXISTS boo;
