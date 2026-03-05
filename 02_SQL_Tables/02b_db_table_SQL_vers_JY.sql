@@ -20,9 +20,11 @@ DROP TABLE IF EXISTS test;
 
 /* Tab. test anlegen, falls noch nicht vorhanden*/
 CREATE TABLE test (
-    name VARCHAR(50) NOT NULL DEFAULT '',
+    name VARCHAR(50) NOT NULL DEFAULT 'Hallo!',
     age INT NOT NULL DEFAULT 0,
-    id INT AUTO_INCREMENT PRIMARY KEY
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    CONSTRAINT uniq_person UNIQUE(name, age) -- uniq_person als Constraint-Name optional
+    -- eigentlich Keine id mehr nötig!
 );
 
 /* Alle Tabellen in der DB anzeigen */
