@@ -26,8 +26,8 @@ VALUES ('max123', 'Max', 'Moritz');
 INSERT INTO boo.users(userName,familyName,firstName) 
 VALUES ('Sybille_die_Stille', 'Sybille', 'Stille');
 
--- INSERT INTO boo.users(userName,familyName,firstName) 
--- VALUES ('johndoe123', 'Max', 'Moritz')
+INSERT INTO boo.users(userName,familyName,firstName) 
+VALUES ('johndoe123', 'Max', 'Moritz');
 
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
