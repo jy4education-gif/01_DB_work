@@ -1,33 +1,33 @@
 \! cls
-/* ------ Strukturen ----- */
+/* ------  Strukturen ----- */
 
-/* 
-    Doppelte DS werden nicht mehr zugelassen
+/* 	 
+	Doppelte DS werden nicht mehr zugelassen
     UNIQUE
 */
-USE boo;  -- DB schon vorhanden
+
+/* Wir wollen nun direkt auf DATBASE und TABLES via Punktnotation zugreifen! /*
 
 /* Tabelle test löschen, falls vorhanden*/
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS boo.test;
 
 /* Tab. test anlegen, falls noch nicht vorhanden*/
-CREATE TABLE test (
-    name VARCHAR(50) NOT NULL DEFAULT '',
+CREATE TABLE boo.test (
+    name VARCHAR(50) NOT NULL DEFAULT 'TBA',
     age INT NOT NULL DEFAULT 0,
     id INT AUTO_INCREMENT PRIMARY KEY,
     UNIQUE (name, age)
 );
 
 /* Struktur der Tabelle anzeigen */
-DESCRIBE test;
+DESCRIBE boo.test;
 
 /* ----- Daten ------- */
-
--- Doppelte Datensätze werden NICHT mehr zugelassen!
-INSERT INTO test (name, age) VALUES ('Max', 35);
-INSERT INTO test (name, age) VALUES ('Maxine', 29);
-INSERT INTO test (name, age) VALUES ('Max', 35);     -- ❌ BLOCKIERT!
-INSERT INTO test (name, age) VALUES ('Anna', 25);    -- ✅ OK
+INSERT INTO boo.test (name, age) VALUES ('Max', 35);
+INSERT INTO boo.test (name, age) VALUES ('Maxine', 29);
+INSERT INTO boo.test VALUES();
+-- Doppelte Datensätze werden NICHT mehr zugelassen !
+INSERT INTO boo.test (name, age) VALUES ('Max', 35);     -- Fehler: Duplicate entry
 
 /* ---- Inhalte der Tabelle anzeigen ---- */
-SELECT * FROM test;
+SELECT * FROM boo.test;
