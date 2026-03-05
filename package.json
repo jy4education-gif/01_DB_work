@@ -12,8 +12,8 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,7 @@
     "argon2": "^0.44.0",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "expression": "^0.0.1",
+    "express-session": "^1.19.0",
     "mysql2": "^3.18.2"
   }
 }
