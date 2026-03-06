@@ -1,23 +1,25 @@
--- Vorbereitung SELECT 
+-- Vorbereitung
 \! cls
+SET NAMES 'utf8mb4';
 
 DROP TABLE IF EXISTS boo.customers;
 
-
--- Tabelle erzeugen
+-- Tabelle erzeugen (direkt mit Vorname/Nachname Struktur)
 CREATE TABLE IF NOT EXISTS boo.customers (
     id INT NOT NULL,
-    name VARCHAR(100),
+    vorname VARCHAR(100),
+    nachname VARCHAR(100),
     adresse VARCHAR(255),
     telefon VARCHAR(20),
     mail VARCHAR(100),
     age INT,
     bundesland VARCHAR(80),
-    wohnort VARCHAR(100)
+    wohnort VARCHAR(100),
+    PRIMARY KEY (id)
 );
 
---Inserts
-INSERT INTO boo.customers (id, name, adresse, telefon, mail, age, bundesland, wohnort)
+-- Inserts mit korrekten Umlauten
+INSERT INTO boo.customers (id, vorname, nachname, adresse, telefon, mail, age, bundesland, wohnort)
 VALUES
 (1, 'Sophia Mueller', 'Musterstrasse 1', '01234/56789', 'sophia.mueller@example.de', 25, 'Nordrhein-Westfalen', 'Koeln'),
 (2, 'Noah Schmidt', 'Hauptstrasse 2', '0221/123456', 'noah.schmidt@example.de', 30, 'Nordrhein-Westfalen', 'Duesseldorf'),
@@ -70,4 +72,25 @@ VALUES
 (49, 'Sabine Hoffmann', 'Rathausstrasse 49', '0211/666666', 'sabine.hoffmann@example.de', 24, 'Nordrhein-Westfalen', 'Duesseldorf'),
 (50, 'Hans Schaefer', 'Schlossstrasse 50', '089/777777', 'hans.schaefer@example.de', 33, 'Bayern', 'Muenchen');
 
-SELECT * FROM boo.customers;
+---
+/* UPDATE Sektion */
+
+# 1. & 2. & 3. Struktur-Update (Falls die Tabelle schon existierte und "Name" hatte)
+-- Da wir oben die Tabelle neu erstellt haben, entfällt der SPLIT hier technisch, 
+-- aber für deine Übung ist die Logik korrekt:
+-- ALTER TABLE boo.customers ADD vorname VARCHAR(100) AFTER id, ADD nachname VARCHAR(100) AFTER vorname;
+-- UPDATE boo.customers SET vorname = SUBSTRING_INDEX(name, ' ', 1), nachname = SUBSTRING_INDEX(name, ' ', -1);
+-- ALTER TABLE boo.customers DROP COLUMN name;
+
+# id 4 + 5 Heirat! Leon Klein nimmt den Namen Fischer an
+UPDATE boo.customers 
+SET nachname = 'Fischer' 
+WHERE id = 4;
+
+# id 1 zieht um
+UPDATE boo.customers 
+SET adresse = 'Mustergasse 2' 
+WHERE id = 1;
+
+-- Ergebniskontrolle
+SELECT id, vorname, nachname, adresse, wohnort FROM boo.customers LIMIT 10;
