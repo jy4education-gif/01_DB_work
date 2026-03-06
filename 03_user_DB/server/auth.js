@@ -13,7 +13,8 @@ export async function registerUser(username, email, password) {
 }
 
 export async function loginUser(username, password) {
-
+  console.log("DEBUG: Login-Versuch für Username:", `|${username}|`); // Die Striche helfen Leerzeichen zu sehen
+  console.log("DEBUG: Passwort erhalten:", `|${password}|`);  // Zeile 16 + 17 später löschen!
   const [rows] = await db.execute(
     "SELECT pwd_hash FROM users WHERE user_name = ?",
     [username]

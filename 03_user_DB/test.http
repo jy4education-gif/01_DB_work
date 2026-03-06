@@ -1,18 +1,57 @@
-### Registrierung testen
+# ### Registrierung testen
+# POST http://localhost:3000/register
+# Content-Type: application/json
+
+# {
+#   "username": "testuser",
+#   "email": "test@example.com",
+#   "password": "SicheresPasswort123!"
+# }
+
+# ### Login testen
+# POST http://localhost:3000/login
+# Content-Type: application/json
+
+# {
+#   "username": "testuser",
+#   "password": "SicheresPasswort123!"
+# }
+
+### Register Grizabella
 POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-  "username": "testuser",
-  "email": "test@example.com",
-  "password": "SicheresPasswort123!"
+  "username": "Grizabella",
+  "email": "griz@cats.com",
+  "password": "Jellicle1981"
 }
 
-### Login testen
+### Login Grizabella
 POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "username": "testuser",
-  "password": "SicheresPasswort123!"
+  "username": "Grizabella",
+  "password": "Jellicle1981"
+}
+
+### Login OldDeuteronomy
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "OldDeuteronomy",
+  "password": "Jellicle1981"
+}
+
+###
+
+### Login RumTumTugger
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "RumTumTugger",
+  "password": "Jellicle1981"
 }
