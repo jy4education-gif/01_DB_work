@@ -15,6 +15,7 @@ user-login-project
 │
 ├─ package.json
 └─ .env
+
 Projektstatus: Remote Auth-Service
 1. Übersicht & Zielsetzung
 Entwicklung eines modularen Authentifizierungs-Services auf Basis von Node.js. Das System ermöglicht die Registrierung und Verifizierung von Benutzern gegen eine Remote-MySQL-Datenbank unter Einhaltung moderner Sicherheitsstandards (OWASP).
