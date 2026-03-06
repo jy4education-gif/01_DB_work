@@ -1,0 +1,6 @@
+#calls
+
+source 04_CRUD\04a_CRUD_create.sql
+source 04_CRUD\04b_CRUD_update.sql
+source 04_CRUD\04c_CRUD_read.sql
+source 04_CRUD\04d_CRUD_delete.sql

@@ -1,0 +1,9 @@
+source 02_SQL_Tables/02a_db_table_SQL.sql
+
+source 02_SQL_Tables/02b_db_table_SQL.sql
+source 02_SQL_Tables/02b_db_table_SQL_vers_JY.sql
+
+source 02_SQL_Tables/02c_db_table_SQL.sql
+source 02_SQL_Tables/02c_db_table_SQL_vers_JY.sql
+
+source 02_SQL_Tables/02d_db_table_SQL.sql
