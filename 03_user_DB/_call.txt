@@ -2,7 +2,7 @@ source 03_user_DB/03a_db_userDB_SQL.sql
 
 source 03_user_DB/03b_db_userDB_SQL.sql
 
-source 03b_db_userDB_SQL_vers_dozent
+source 03b_db_userDB_SQL_vers_dozent.sql
 
 source 03_user_DB/03c_db_userDB_SQL.sql
 
