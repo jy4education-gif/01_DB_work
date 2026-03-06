@@ -1,10 +1,10 @@
-# Vorbereitung SELECT 
+-- Vorbereitung SELECT 
 \! cls
 
 DROP TABLE IF EXISTS boo.customers;
 
 
-# Tabelle erzeugen
+-- Tabelle erzeugen
 CREATE TABLE IF NOT EXISTS boo.customers (
     id INT NOT NULL,
     name VARCHAR(100),
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS boo.customers (
     wohnort VARCHAR(100)
 );
 
-# Inserts
+-- Inserts
 INSERT INTO boo.customers (id, name, adresse, telefon, mail, age, bundesland, wohnort)
 VALUES
 (1, 'Sophia Mueller', 'Musterstrasse 1', '01234/56789', 'sophia.mueller@example.de', 25, 'Nordrhein-Westfalen', 'Koeln'),
