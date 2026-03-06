@@ -4,7 +4,7 @@
 
 
 -- SELECT 
---     name,
+--     vorname,
 --     mail,
 --     wohnort
 -- FROM boo.customers;
