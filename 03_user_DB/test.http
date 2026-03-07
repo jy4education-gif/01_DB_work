@@ -55,3 +55,33 @@ Content-Type: application/json
   "username": "RumTumTugger",
   "password": "Jellicle1981"
 }
+
+### Login OldDeuteronomy
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "OldDeuteronomy",
+  "password": "Jellicle1981"
+}
+
+###
+
+### Register Ji-Yong
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "Ji-Yong",
+  "email": "jiyong@example.com",
+  "password": "Jellicle1981"
+}
+
+### Login Ji-Yong
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "Ji-Yong",
+  "password": "Jellicle1981"
+}
