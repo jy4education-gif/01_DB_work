@@ -1,3 +1,4 @@
+
 \! cls
 
 -- SELECT * FROM boo.customers;
@@ -12,7 +13,8 @@
 # Begrenzen durch LIMIT
 /*
 SELECT 
-    name,
+    vorname,
+    nachname,
     mail,
     wohnort
 FROM boo.customers
@@ -24,7 +26,7 @@ LIMIT 10,20
 # Sortieren , numerisch
 /*
 SELECT 
-    name AS Kundennamen,
+    nachname AS Kundenname,
     age AS 'Alter'
 FROM boo.customers
 -- ORDER BY age ASC
@@ -36,7 +38,8 @@ LIMIT 20
 # Sortieren , alphnumerisch / kombi
 /*
 SELECT 
-    name AS Kundennamen,
+    vorname,
+    nachname AS Kundennamen,
     age AS 'Alter',
     wohnort
 FROM boo.customers
@@ -46,21 +49,24 @@ ORDER BY wohnort ASC, age DESC
 ;
 */
 
-# Filtern mit WHERE
--- SELECT 
---     name AS Kundennamen,
---     age AS 'Alter',
---     wohnort
--- FROM boo.customers
--- WHERE wohnort = "Berlin"
--- -- ORDER BY wohnort ASC, age DESC
--- ORDER BY age DESC
--- LIMIT 20
--- ;
 
--- SELECT 
---     count((id))
---     -- name AS Kundennamen
--- FROM boo.customers
--- LIMIT SELECT count(id) FROM boo.customers - 20 , 
--- ;
+# Filtern mit WHERE
+/*
+SELECT 
+    nachname AS Kundennamen,
+    age AS 'Alter',
+    wohnort
+FROM boo.customers
+WHERE wohnort = "Berlin"
+-- ORDER BY wohnort ASC, age DESC
+ORDER BY age DESC
+LIMIT 20
+;
+*/
+
+/*
+SELECT 
+    count((id))
+FROM boo.customers
+;
+*/
