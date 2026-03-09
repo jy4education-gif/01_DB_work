@@ -16,11 +16,14 @@ Ausgabe beschränken
 SELECT
    ticker AS "SYM",
    price AS "Kurs in $",
-   -- c_name AS Unternehmen
-   -- industry Branche
-   concat( sector, " | ", industry) AS "Operations"
+   c_name AS Unternehmen, -- wird auch ohne "" akzeptiert
+   -- industry Branche -- wird auch ohne AS akzeptiert
+   concat( sector, " | ", industry) AS "Operations",
+   ranking AS "Rang"
 FROM stocks.ccc
-LIMIT 200,10
+WHERE ranking BETWEEN 1 AND 100
+ORDER BY ranking
+-- LIMIT 200,10
 -- LIMIT 1
 -- LIMIT 10 -- X Zeilen ab 0
 ;
