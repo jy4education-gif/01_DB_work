@@ -1,8 +1,10 @@
 
 \! cls
 
--- SELECT * FROM boo.customers;
-
+-- SELECT 
+--     * 
+-- FROM boo.customers
+-- ;
 
 -- SELECT 
 --     vorname,
@@ -18,8 +20,8 @@ SELECT
     mail,
     wohnort
 FROM boo.customers
--- LIMIT 10
-LIMIT 10,20
+LIMIT 10
+-- LIMIT 10,20
 ;
 */
 
@@ -55,9 +57,10 @@ ORDER BY wohnort ASC, age DESC
 SELECT 
     nachname AS Kundennamen,
     age AS 'Alter',
-    wohnort
+    wohnort,
+    mail AS 'E-Mail'
 FROM boo.customers
-WHERE wohnort = "Berlin"
+WHERE wohnort = "Berlin" OR wohnort = "Frankfurt"
 -- ORDER BY wohnort ASC, age DESC
 ORDER BY age DESC
 LIMIT 20
