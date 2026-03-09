@@ -34,7 +34,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Wir testen beide Pfade, falls du unsicher bist, wo die Datei liegt
+// Wir testen beide Pfade
 const envPath = path.join(__dirname, ".env"); 
 const result = dotenv.config({ path: envPath });
 

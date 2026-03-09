@@ -27,8 +27,7 @@ INSERT INTO boo.test(name,age) VALUES("Max",35);
 INSERT INTO boo.test(age,name) VALUES(29,"Maxine");
 INSERT INTO boo.test VALUES();
 /* Struktur der Tabelle anzeigen */
-
-
+DESCRIBE boo.test;
 /* ----- Daten ------- */
 INSERT INTO boo.test(name,age) VALUES("Max",35);
 INSERT INTO boo.test(age,name) VALUES(29,"Maxine");
