@@ -1,0 +1,34 @@
+#source 05_SQL_SELECT/05_1_parsing_csv.sql
+source 05_SQL_SELECT/05_0_uploading.sql
+
+source 05_SQL_SELECT/05_2_que_basic.sql
+source 05_SQL_SELECT/05_3_que_sort.sql
+source 05_SQL_SELECT/05_4_que_filter.sql
+source 05_SQL_SELECT/05_5_que_stringf.sql
+source 05_SQL_SELECT/05_6a_que_distinct.sql
+source 05_SQL_SELECT/05_6b_que_count.sql
+source 05_SQL_SELECT/05_6c_que_min_max.sql
+source 05_SQL_SELECT/05_6d_que_avg.sql
+
+
+
+SELECT COUNT(c_name) AS anzahl_firmen
+FROM stocks.ccc;
+
+SELECT c_name 
+FROM stocks.ccc 
+ORDER BY id ASC 
+LIMIT 10;
+
+SELECT
+    id, c_name, ranking
+FROM stocks.ccc
+WHERE ranking >= 1 AND ranking <= 100
+LIMIT 50;
+
+SELECT 
+    id, c_name, ranking
+FROM stocks.ccc
+WHERE ranking BETWEEN 1 AND 100
+ORDER BY price ASC
+LIMIT 50;
