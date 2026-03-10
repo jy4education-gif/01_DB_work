@@ -31,3 +31,44 @@ FROM stocks.ccc
 WHERE ranking BETWEEN 1 AND 100
 ORDER BY price ASC
 LIMIT 50;
+
+# 1. Aggregation: Durchschnittliche Rendite pro Sektor
+Um statistische Werte über Gruppen hinweg zu berechnen, 
+durch GROUP BY. Berechnet hier den Durchschnitt (AVG) der
+Spalte yield.
+
+SELECT 
+    sector, 
+    ROUND(AVG(yield), 4) AS avg_yield,
+    COUNT(*) AS anzahl_firmen
+FROM stocks.ccc
+GROUP BY sector
+ORDER BY avg_yield DESC;
+
+# 2. Komplexe Filterung: Sektor, Ranking und Dividende
+Kombination mnit mehreren Bedingungen mit AND. 
+Entscheidend, um aus einer großen Datenbank die relevantesten
+Datensätze zu extrahieren.
+
+SELECT 
+    c_name, ticker, sector, ranking, yield
+FROM stocks.ccc
+WHERE sector = 'Technology' 
+  AND ranking < 50 
+  AND yield > 0.02
+ORDER BY ranking ASC;
+
+# 3. Berechnung: Jährliche Auszahlung pro Aktie
+SQL kann während der Abfrage Berechnungen durchführen. 
+Erstellt eine virtuelle Spalte, die den absoluten Betrag 
+der Dividende pro Aktie berechnet (Preis × Rendite).
+
+SELECT 
+    c_name, 
+    ticker, 
+    price, 
+    yield,
+    (price * yield) AS payout_per_share_annual
+FROM stocks.ccc
+ORDER BY payout_per_share_annual DESC
+LIMIT 20;
