@@ -52,6 +52,44 @@ ORDER by Branchen DESC
 ;
 */
 
+# GROUP BY mit mehreren Feldern:
+/*
+SELECT
+    sector,
+    payouts,
+    COUNT(DISTINCT industry) AS Branchen
+FROM stocks.ccc
+WHERE sector LIKE 'Co%'
+GROUP BY sector, payouts
+HAVING COUNT(DISTINCT industry) > 2;
+*/
+
+# Subquery in der FROM-Klausel - Aggregat als normale Spalte:
+-- /*
+-- Innerer Aufbau um Aggregat berechnen:
+-- SELECT
+--     sector,
+--     COUNT(DISTINCT industry) AS Branchen -- Aggregat, das in der äußeren Abfrage als normale Spalte behandelt wird
+-- FROM stocks.ccc
+-- WHERE sector LIKE 'Co%'
+-- GROUP BY sector
+-- aus dem Aggregat, wird in der Klausel jetzt eine normale Spalte:
+SELECT
+    Branchen,              
+    COUNT(*) AS Anzahl_Sektoren
+FROM (
+    SELECT
+        sector,
+        COUNT(DISTINCT industry) AS Branchen
+    FROM stocks.ccc
+    WHERE sector LIKE 'Co%'
+    GROUP BY sector
+) AS t -- gibt der abgeleiteten Tabelle (Derived Table) einen Namen, damit die äußere überhaupt darauf zugreifen kann!
+GROUP BY Branchen
+HAVING Branchen > 2
+;
+-- */
+
 # Wieviele VERSCHIEDENE Unternehmen gibt es 
 # in den jeweiligen Branchen?
 /*
