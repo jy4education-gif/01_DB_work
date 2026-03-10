@@ -15,7 +15,7 @@
 /*
 SELECT
 	ticker AS "SYM",
-    c_name "Unternehmen",
+    c_name "Unternehmen", 
     concat("Ops: ",sector," : ",industry) "Operation"
 FROM stocks.ccc
 # ggf. Restriktionen
@@ -72,6 +72,22 @@ LIMIT 20;
 */
 
 # TRIM() --> Trimmen vor/nach String (Whitespace) Siehe Link
-
+/*
+SELECT
+    ticker AS "SYM",
+    c_name AS "Original",
+    -- -- Entfernt Leerzeichen am Anfang und Ende
+    -- trim(c_name) AS "Trimmed",
+    -- -- Spezifisch: Nur führende Leerzeichen entfernen
+    -- ltrim(c_name) AS "Only_Left",
+    -- -- Spezifisch: Nur nachfolgende Leerzeichen entfernen
+    -- rtrim(c_name) AS "Only_Right",
+    -- -- Fortgeschritten: Entfernt ein spezifisches Zeichen (z.B. ein Punkt am Ende)
+    trim(TRAILING '.' FROM c_name) AS "No_Dot_At_End"
+FROM stocks.ccc
+# Meist genutzt, um Datenfehler zu finden:
+-- WHERE c_name LIKE " %" OR c_name LIKE "% "
+LIMIT 20;
+*/
 
 
