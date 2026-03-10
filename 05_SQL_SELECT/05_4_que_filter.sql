@@ -7,7 +7,9 @@
     Eingrenzen/Filtern WHERE & RegEx
     Eingrenzen/Filtern WHERE & IN / NOT IN
     Eingrenzen/Filtern WHERE & BETWEEN / NOT BETWEEN
-    LINK:https://danielfett.de/2006/03/20/regulaere-ausdruecke-tutorial/, https://www.regular-expressions.info/quickstart.html, https://regexr.com/
+    LINK:https://danielfett.de/2006/03/20/regulaere-ausdruecke-tutorial/
+    LINK:https://www.regular-expressions.info/quickstart.html
+    LINK:https://regexr.com/
 */
 
 # Eingrenzen/Filtern WHERE & AND/OR etc.
