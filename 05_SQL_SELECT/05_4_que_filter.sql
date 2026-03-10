@@ -11,7 +11,7 @@
 
 # Eingrenzen/Filtern WHERE & AND/OR etc.
 # Scharfe Suche
-/**/
+/*
 SELECT
 	ticker AS "SYM",
     c_name AS "Unternehmen",
@@ -41,7 +41,7 @@ ORDER BY industry DESC
 # Begrenzung
 LIMIT 20
 ;
-
+*/
 
 # Eingrenzen/Filtern WHERE & LIKE + Parameter
 # Unscharfe Suche 
@@ -71,8 +71,8 @@ FROM stocks.ccc
 -- WHERE industry LIKE "_ood%"
 
 -- WHERE industry LIKE "%ment"
--- WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment"
-WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment" AND industry NOT LIKE "%tain%"
+WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment"
+-- WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment" AND industry NOT LIKE "%tain%"
 
 ORDER BY industry ASC
 LIMIT 40
@@ -99,33 +99,35 @@ LIMIT 400 -- X Zeilen ab 0
 */
 
 
-# Eingrenzen/Filtern WHERE & RegEx
+# Eingrenzen/Filtern WHERE & RegEx -- https://danielfett.de/2006/03/20/regulaere-ausdruecke-tutorial/ -- https://www.regular-expressions.info/quickstart.html -- https://regexr.com/
 /*
 SELECT
 	c_name "Unternehmen"
 FROM stocks.ccc
-WHERE c_name RLIKE "^[AZ]"  -- mit A oder Z beginnend
+-- WHERE c_name RLIKE "^[AZ]"  -- mit A oder Z beginnend
+-- WHERE c_name RLIKE '^Ai|^Z'
 -- WHERE c_name RLIKE "^[1-9]"  -- mit Ziffer beginnend
 ORDER BY c_name;
 */
 
 # Eingrenzen/Filtern WHERE & BETWEEN / NOT BETWEEN
-/**/
--- SELECT 
---     ticker AS "SYM",
---     c_name AS "Unternehmen",
---     price AS "Kurs ($)",
---     sector AS "Sektor",
---     industry AS "Branche"
--- FROM stocks.ccc
+/*
+SELECT 
+    ticker AS "SYM",
+    c_name AS "Unternehmen",
+    price AS "Kurs ($)",
+    sector AS "Sektor",
+    industry AS "Branche"
+FROM stocks.ccc
 
 -- WHERE sector = "Financials" AND price < 30.0  -- =/>/<
 -- WHERE sector = "Financials" AND (price BETWEEN 30.0 AND 50.0)  -- =/>/<
--- WHERE sector = "Financials" AND NOT (price BETWEEN 20.0 AND 250.0) -- Band rausfiltern
+WHERE sector = "Financials" AND NOT (price BETWEEN 20.0 AND 250.0) -- Band rausfiltern
 
 -- ORDER BY price DESC
 -- LIMIT 200 -- X Zeilen ab 0
 ;
+*/
 
 
 
