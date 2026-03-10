@@ -54,7 +54,7 @@ SELECT
     c_name, ticker, sector, ranking, yield
 FROM stocks.ccc
 WHERE sector = 'Technology' 
-  AND ranking < 50 
+  AND ranking < 50
   AND yield > 0.02
 ORDER BY ranking ASC;
 
