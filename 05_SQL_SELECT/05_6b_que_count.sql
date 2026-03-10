@@ -54,7 +54,7 @@ ORDER by Branchen DESC
 
 # Wieviele VERSCHIEDENE Unternehmen gibt es 
 # in den jeweiligen Branchen?
--- /*
+/*
 SELECT
     industry Branchen, -- nicht aggregiert / organisch
     count(c_name) AS Unternehmen -- aggregiert / durch eine Fkt. entstanden
@@ -62,4 +62,4 @@ FROM stocks.ccc
 GROUP BY Branchen -- bei Kombination organisch /aggr.
 ORDER by Unternehmen DESC
 ;
--- */
+*/
