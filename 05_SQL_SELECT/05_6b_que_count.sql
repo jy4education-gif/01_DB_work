@@ -65,7 +65,7 @@ HAVING COUNT(DISTINCT industry) > 2;
 */
 
 # Subquery in der FROM-Klausel - Aggregat als normale Spalte:
--- /*
+/*
 -- Innerer Aufbau um Aggregat berechnen:
 -- SELECT
 --     sector,
@@ -88,7 +88,7 @@ FROM (
 GROUP BY Branchen
 HAVING Branchen > 2
 ;
--- */
+*/
 
 # Wieviele VERSCHIEDENE Unternehmen gibt es 
 # in den jeweiligen Branchen?

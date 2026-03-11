@@ -2,18 +2,20 @@
 /* Aggregationen MIN/MAX */
 
 # Preis der teuersten/günstigsten Aktie?
-
 /*
 SELECT
-    MAX(price) AS "Max. Preis"
--- MIN(price) AS "Min. Preis"
+    -- MAX(price) AS "Max. Preis"
+MIN(price) AS "Min. Preis"
 FROM stocks.ccc
 ;
-*/
+
+
 
 # WELCHE Aktie ist am teuersten/günstigsten ?
 # 1. Subquery
 # 2. ORDER BY .... ASC/DESC & LIMIT 1
+
+/* 1. Subquery */
 
 -- SELECT MAX(price) FROM stocks.ccc;
 -- SELECT MIN(price) FROM stocks.ccc;
@@ -30,6 +32,8 @@ WHERE price = (SELECT MAX(price) FROM stocks.ccc) -- max
 ;
 */
 
+
+/* LIMIT 1 */
 
 /*
 SELECT
@@ -56,12 +60,3 @@ ORDER BY no_yrs DESC
 LIMIT 1
 ;
 */
-
-
-
-
-
-
-
-
-
