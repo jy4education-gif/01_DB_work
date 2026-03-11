@@ -27,14 +27,12 @@ SELECT
     price AS "Kurs in $"
 FROM stocks.ccc
 # SUBQUERY, hier: zeig mir den max./min. Wert / wichtig: (SELECT ...) !
-WHERE price = (SELECT MAX(price) FROM stocks.ccc) -- max
--- WHERE price = (SELECT MIN(price) FROM stocks.ccc)
+-- WHERE price = (SELECT MAX(price) FROM stocks.ccc) -- max
+WHERE price = (SELECT MIN(price) FROM stocks.ccc) -- min
 ;
 */
 
-
-/* LIMIT 1 */
-
+# WELCHE Aktie ist am teuersten/günstigsten ? Mit ORDER BY & LIMIT 1
 /*
 SELECT
     ticker SYM,
